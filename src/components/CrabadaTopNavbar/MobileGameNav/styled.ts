@@ -31,7 +31,7 @@ export const SelectedItem = styled.button`
   border-radius: 4px;
 `
 
-export const MenuList = styled.ul`
+export const MenuList = styled.ul<{ isOpen: boolean }>`
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
 `
 

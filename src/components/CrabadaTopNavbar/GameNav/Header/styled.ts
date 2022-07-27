@@ -26,7 +26,7 @@ export const Name = styled.span`
   margin: 0 10px;
 `
 
-export const TokenStatusTag = styled.span`
+export const TokenStatusTag = styled.span<{ status: string }>`
   padding: 4px;
   border-radius: 2px;
   ${(props) =>
