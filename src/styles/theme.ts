@@ -13,6 +13,14 @@ const Theme = {
   secondary: {
     main: '#ffffff',
   },
+  red: {
+    main: '#FC252B',
+    dark: '#3A0002',
+  },
+  green: {
+    main: '#34A527',
+    dark: '#052D00',
+  },
 }
 
 export default Theme
