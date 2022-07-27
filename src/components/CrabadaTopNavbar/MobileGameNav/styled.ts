@@ -19,6 +19,9 @@ export const Dropdown = styled.div`
   flex-direction: column;
   background: linear-gradient(180deg, #001431, #000d1f);
   width: 100%;
+  ${media.greaterThan('medium')`
+    display: none;
+  `}
 `
 
 export const SelectedItem = styled.button`

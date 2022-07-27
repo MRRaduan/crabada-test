@@ -1,12 +1,14 @@
 import CrabadaBanner from '../../../public/images/Crabada-Banner.png'
 import * as S from './styled'
-import MobileNav from './MobileNav'
+import MobileGameNav from './MobileGameNav'
+import GameNav from './GameNav'
 
 const CrabadaTopNavBar = () => {
   return (
     <>
       <S.CrabadaBanner />
-      <MobileNav />
+      <MobileGameNav />
+      <GameNav />
     </>
   )
 }

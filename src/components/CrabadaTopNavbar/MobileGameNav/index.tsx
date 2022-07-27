@@ -1,23 +1,9 @@
 import * as S from './styled'
 import Chrevron from 'images/Chevron.svg'
 import { useState } from 'react'
+import { MenuItems } from '../constants'
 
-const MenuItems = [
-  {
-    title: 'Profile',
-    route: '/profile',
-  },
-  {
-    title: 'Economy',
-    route: '/economy',
-  },
-  {
-    title: 'Population',
-    route: '/population',
-  },
-]
-
-const MobileNav = () => {
+const MobileGameNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -37,4 +23,4 @@ const MobileNav = () => {
   )
 }
 
-export default MobileNav
+export default MobileGameNav
