@@ -4,7 +4,7 @@ import Header from './Header'
 
 const GameNav = () => {
   return (
-    <>
+    <S.GameNavWrapper>
       <Header />
       <S.Nav>
         <S.MenuList>
@@ -21,7 +21,7 @@ const GameNav = () => {
           ))}
         </S.MenuList>
       </S.Nav>
-    </>
+    </S.GameNavWrapper>
   )
 }
 

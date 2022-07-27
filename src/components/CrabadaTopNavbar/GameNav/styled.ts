@@ -2,6 +2,12 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import Theme from 'styles/theme'
 
+export const GameNavWrapper = styled.div`
+  ${media.lessThan('medium')`
+    display: none;
+  `}
+`
+
 export const Nav = styled.nav`
   width: 100%;
 
