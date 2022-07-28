@@ -12,10 +12,18 @@ export const Wrapper = styled.section`
     width: 100%;
     margin: 140px 0 0 0;
     border: 1px solid #1370F6;
+    display: flex;
+    justify-content: space-between;
   `}
 `
-export const ChartLegendList = styled.ul``
-export const ChartLegendItem = styled.li``
+export const ChartLegendList = styled.ul`
+  ${media.greaterThan('medium')`
+  margin: 74px 48px;
+  `}
+`
+export const ChartLegendItem = styled.li`
+  width: 256px;
+`
 
 export const ChartHeader = styled.div`
   width: 100%;
@@ -52,7 +60,9 @@ export const TimeFilter = styled.div`
   `}
 `
 
-export const ChartSpace = styled.div``
+export const ChartSpace = styled.div`
+  width: 100%;
+`
 
 export const TimeItem = styled.button<{ active?: boolean }>`
   font-size: 14px;
@@ -76,7 +86,9 @@ export const TimeItem = styled.button<{ active?: boolean }>`
   }
 `
 
-export const ChartWrapper = styled.div``
+export const ChartWrapper = styled.div`
+  width: 100%;
+`
 
 export const ChartLegend = styled.div`
   background-color: #001a41;
@@ -86,6 +98,7 @@ export const ChartLegend = styled.div`
   justify-content: center;
   padding: 16px;
   ${media.greaterThan('medium')`
+    padding: 0;
     background-color: transparent;
   `}
 `

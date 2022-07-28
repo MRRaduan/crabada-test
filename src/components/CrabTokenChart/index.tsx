@@ -1,4 +1,8 @@
 import CrabTokenLegend, { TokenChartLegend } from 'components/CrabTokenLegend'
+// import Chart from 'react-apexcharts'
+import dynamic from 'next/dynamic'
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
+
 import * as S from './styled'
 
 const TokensLegends: TokenChartLegend[] = [
@@ -62,6 +66,21 @@ const TokensLegends: TokenChartLegend[] = [
 ]
 
 const CrabTokenChart = () => {
+  const options = {
+    chart: {
+      id: 'basic-bar',
+    },
+    xaxis: {
+      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+    },
+  }
+  const series = [
+    {
+      name: 'series-1',
+      data: [30, 40, 45, 50, 49, 60, 70, 91],
+    },
+  ]
+
   return (
     <S.Wrapper>
       <S.ChartSpace>
@@ -79,7 +98,9 @@ const CrabTokenChart = () => {
             <S.TimeItem active>All Crabs</S.TimeItem>
           </S.TimeFilter>
         </S.ChartHeader>
-        <S.ChartWrapper></S.ChartWrapper>
+        <S.ChartWrapper>
+          <Chart options={options} series={series} type="line" />
+        </S.ChartWrapper>
       </S.ChartSpace>
       <S.ChartLegend>
         <S.ChartLegendTitle>POPULATION BREAKDOWN</S.ChartLegendTitle>

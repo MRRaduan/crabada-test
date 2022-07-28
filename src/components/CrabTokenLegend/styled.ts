@@ -6,7 +6,8 @@ export const Wrapper = styled.div<{ color: string }>`
   display: flex;
   align-items: center;
   background-color: ${(props) => props.color};
-  padding: 8px 16px;
+  padding: 0 16px;
+  height: 30px;
   border-radius: 4px;
   margin: 8px 0;
 `
