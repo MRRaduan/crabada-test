@@ -4,6 +4,7 @@ import GlobalStyles from 'styles/global'
 import Head from 'next/head'
 import SideNavBar from 'components/SideNavBar'
 import * as S from './styled'
+import CrabadaTopNavBar from 'components/CrabadaTopNavbar'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -20,6 +21,7 @@ function App({ Component, pageProps }: AppProps) {
       <GlobalStyles />
       <SideNavBar />
       <S.Content>
+        <CrabadaTopNavBar />
         <Component {...pageProps} />
       </S.Content>
     </>
