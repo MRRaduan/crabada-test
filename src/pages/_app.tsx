@@ -5,6 +5,7 @@ import Head from 'next/head'
 import SideNavBar from 'components/SideNavBar'
 import * as S from './styled'
 import CrabadaTopNavBar from 'components/CrabadaTopNavbar'
+import Footer from 'components/Footer'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -24,6 +25,7 @@ function App({ Component, pageProps }: AppProps) {
         <CrabadaTopNavBar />
         <Component {...pageProps} />
       </S.Content>
+      <Footer />
     </>
   )
 }
