@@ -6,7 +6,6 @@ const ProfileTitle = () => {
   return (
     <S.Wrapper>
       <S.Title>Crab Prices</S.Title>
-
       <S.ProfileAvatar>
         <S.ProfileImage>
           <Image src="/images/profile-avatar.png" width={40} height={40} />

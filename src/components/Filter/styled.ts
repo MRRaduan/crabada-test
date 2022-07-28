@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 import Theme from 'styles/theme'
 
 export const Background = styled.div`
@@ -11,14 +12,20 @@ export const Background = styled.div`
   justify-content: space-between;
   padding: 16px 56px;
   margin-top: 24px;
+  ${media.lessThan('medium')`
+    display: none;
+  `}
 `
 
 export const FilterGroup = styled.div`
   display: flex;
+  width: 100%;
+  max-width: 890px;
 `
 
 export const FilterOption = styled.div`
   width: 100%;
+  max-width: 227px;
   margin: 0 32px;
   &:first-child {
     margin-left: 0;
@@ -42,6 +49,8 @@ export const FilterButton = styled.button`
   height: 32px;
   transition: all 0.16s ease-in-out;
   cursor: pointer;
+  width: max-content;
+  margin-left: 32px;
   &:hover {
     opacity: 0.9;
     transition: all 0.16s ease-in-out;

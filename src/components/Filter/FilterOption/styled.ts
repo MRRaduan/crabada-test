@@ -31,7 +31,7 @@ export const RangeLines = styled.div`
 
 export const Range = styled.input`
   -webkit-appearance: none;
-  width: 227px;
+  width: 100%;
   height: 4px;
   border-radius: 4px;
   background: ${Theme.grayscale.gray};

@@ -13,6 +13,11 @@ export const CrabadaLogo = styled.div``
 
 export const CrabadaTokens = styled.ul`
   display: flex;
+  margin-top: 12px;
+
+  @media (min-width: 1078px) {
+    margin-top: 0;
+  }
 `
 
 export const CrabadaToken = styled.li`

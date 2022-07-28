@@ -1,8 +1,12 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 import Theme from 'styles/theme'
 
 export const Wrapper = styled.div`
   display: flex;
+  ${media.lessThan('medium')`
+    display: none;
+  `}
 `
 
 export const Title = styled.h1`
