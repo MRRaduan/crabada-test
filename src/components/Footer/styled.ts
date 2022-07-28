@@ -12,7 +12,6 @@ export const FooterBg = styled.footer`
   justify-content: center;
 `
 
-export const Author = styled.div``
 export const Link = styled.a`
   display: block;
   margin-top: 16px;
