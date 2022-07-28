@@ -1,4 +1,3 @@
-import CrabadaBanner from '../../../public/images/Crabada-Banner.png'
 import * as S from './styled'
 import MobileGameNav from './MobileGameNav'
 import GameNav from './GameNav'

@@ -79,7 +79,7 @@ const SideNavBar = () => {
         ))}
         {SocialItems.map((SocialItem) => (
           <S.SocialItem key={SocialItem.name}>
-            <a href={SocialItem.url} target="_blank">
+            <a href={SocialItem.url} target="_blank" rel="noreferrer">
               {SocialItem.img}
             </a>
           </S.SocialItem>
