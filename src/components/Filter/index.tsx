@@ -1,8 +1,24 @@
+import FilterOption from './FilterOption'
+import * as S from './styled'
+
 const Filter = () => {
   return (
-    <>
-      <h1>Filter</h1>
-    </>
+    <S.Background>
+      <S.FilterGroup>
+        <S.FilterOption>
+          <FilterOption title="Breed Count" />
+        </S.FilterOption>
+        <S.FilterOption>
+          <FilterOption title="Legend" />
+        </S.FilterOption>
+        <S.FilterOption>
+          <FilterOption title="Purity" />
+        </S.FilterOption>
+      </S.FilterGroup>
+      <S.FilterActions>
+        <S.FilterButton>Apply Filter</S.FilterButton>
+      </S.FilterActions>
+    </S.Background>
   )
 }
 
