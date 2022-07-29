@@ -1,6 +1,6 @@
 import * as S from './styled'
 import ShowHideIcon from 'images/ShowHideIcon.svg'
-import Image from 'next/Image'
+import Image from 'next/image'
 
 const ProfileTitle = () => {
   return (

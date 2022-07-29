@@ -1,6 +1,6 @@
 import CrabadaLogo from 'images/CrabadaLogo.svg'
 import * as S from './styled'
-import Image from 'next/Image'
+import Image from 'next/image'
 import formatter from 'utils/formatter'
 
 type Token = {
