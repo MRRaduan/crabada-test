@@ -1,4 +1,4 @@
-import useSWR from 'swr'
+import useSWR, { Fetcher } from 'swr'
 import api from 'api'
 import { CrabTokensName } from 'components/CrabTokenLegend'
 import axios from 'axios'
@@ -31,6 +31,15 @@ export const allClassesName: CrabTokensName[] = [
   'ORGANIC',
 ]
 
+type DataResponse = {
+  config: object
+  data: Response[]
+  headers: object
+  request: any
+  status: number
+  statusText: string
+}
+
 const mountRequests = (params: BucketsParams) => {
   const url = '/marketplace/game/crabada/prices'
   const allRequests: any = []
@@ -61,9 +70,9 @@ function useBuckets(params: BucketsParams) {
 
   const { data, error } = useSWR('/marketplace/game/crabada/prices', fetcher)
 
-  const response = data?.map((crabClass) =>
-    crabClass.data.sort((a, b) => a.bucketDate - b.bucketDate)
-  )
+  const response = data?.map((crabClass: DataResponse | any) => {
+    return crabClass.data.sort((a: any, b: any) => a.bucketDate - b.bucketDate)
+  })
 
   const renamedBuckets: { [x: number]: any }[] = []
   data?.forEach((responseItem: any) => {
