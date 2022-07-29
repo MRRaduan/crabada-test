@@ -2,6 +2,8 @@ import { Bucket, CrabTokensName } from 'components/CrabTokenLegend'
 import CrabTokenLegendList from 'components/CrabTokenLegendList'
 import { allClassesName } from 'hooks/useBuckets'
 import dynamic from 'next/dynamic'
+import { ApexOptions } from 'apexcharts'
+
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 import * as S from './styled'
@@ -10,7 +12,7 @@ interface CrabTokenChartProps {
   chartData: Record<CrabTokensName, Bucket[]>
 }
 
-const options = {
+const options: ApexOptions = {
   chart: {
     id: 'basic-bar',
     zoom: {
