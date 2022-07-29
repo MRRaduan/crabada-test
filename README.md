@@ -1,3 +1,5 @@
+![Crabada](public/images/Crabada-Banner.png)
+
 # P2E Analytics Technical Test
 
 [Click here to see real demo preview](https://crabada-test-mrraduan.vercel.app/crab-prices)
