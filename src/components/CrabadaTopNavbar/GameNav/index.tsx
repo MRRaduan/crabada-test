@@ -1,7 +1,7 @@
 import * as S from './styled'
 import { MenuItems } from '../constants'
 import Header from './Header'
-import Link from 'next/Link'
+import Link from 'next/link'
 
 const GameNav = () => {
   return (
