@@ -5,7 +5,7 @@ import CrabTokenChart from 'components/CrabTokenChart'
 import useBuckets from 'hooks/useBuckets'
 
 const Home: NextPage = () => {
-  const { buckets, renamedBuckets, isLoading, isError } = useBuckets({
+  const { renamedBuckets, isLoading, isError } = useBuckets({
     from: '2022-07-01T00:00:00.000000Z',
     breedCount: [0, 3],
     legend: [0, 6],
