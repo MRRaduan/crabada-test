@@ -1,80 +1,16 @@
-import CrabTokenLegend, {
-  CrabTokensName,
-  TokenChartLegend,
-} from 'components/CrabTokenLegend'
+import CrabTokenLegend, { CrabTokensName } from 'components/CrabTokenLegend'
+import CrabTokenLegendList from 'components/CrabTokenLegendList'
 import { allClassesName } from 'hooks/useBuckets'
-// import Chart from 'react-apexcharts'
 import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 import * as S from './styled'
-
-const TokensLegends: TokenChartLegend[] = [
-  {
-    name: 'SURGE',
-    color: 'rgb(64, 9, 11)',
-    value: 2742,
-    status: 'up',
-    percentage: 29,
-  },
-  {
-    name: 'SUNKEN',
-    color: 'rgb(7, 64, 64)',
-    value: 4747,
-    status: 'up',
-    percentage: 29,
-  },
-  {
-    name: 'PRIME',
-    color: 'rgb(64, 56, 15)',
-    value: 2742,
-    status: 'down',
-    percentage: 29,
-  },
-  {
-    name: 'BULK',
-    color: 'rgb(64, 25, 19)',
-    value: 2742,
-    status: 'up',
-    percentage: 29,
-  },
-  {
-    name: 'CRABOID',
-    color: 'rgb(0, 28, 64)',
-    value: 2742,
-    status: 'up',
-    percentage: 29,
-  },
-
-  {
-    name: 'RUINED',
-    color: 'rgb(29, 22, 64)',
-    value: 2742,
-    status: 'up',
-    percentage: 29,
-  },
-  {
-    name: 'GEM',
-    color: 'rgb(64, 12, 43)',
-    value: 2742,
-    status: 'up',
-    percentage: 29,
-  },
-  {
-    name: 'ORGANIC',
-    color: 'rgb(20, 64, 15)',
-    value: 2742,
-    status: 'up',
-    percentage: 29,
-  },
-]
 
 interface CrabTokenChartProps {
   chartData: any
 }
 
 const CrabTokenChart = ({ chartData }: CrabTokenChartProps) => {
-  console.log(chartData)
   const options = {
     chart: {
       id: 'basic-bar',
@@ -153,13 +89,7 @@ const CrabTokenChart = ({ chartData }: CrabTokenChartProps) => {
       </S.ChartSpace>
       <S.ChartLegend>
         <S.ChartLegendTitle>POPULATION BREAKDOWN</S.ChartLegendTitle>
-        <S.ChartLegendList>
-          <S.ChartLegendItem>
-            {TokensLegends.map((token) => (
-              <CrabTokenLegend key={token.name} {...token} />
-            ))}
-          </S.ChartLegendItem>
-        </S.ChartLegendList>
+        <CrabTokenLegendList buckets={chartData} />
       </S.ChartLegend>
     </S.Wrapper>
   )

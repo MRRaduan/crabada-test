@@ -16,14 +16,6 @@ export const Wrapper = styled.section`
     justify-content: space-between;
   `}
 `
-export const ChartLegendList = styled.ul`
-  ${media.greaterThan('medium')`
-  margin: 74px 48px;
-  `}
-`
-export const ChartLegendItem = styled.li`
-  width: 256px;
-`
 
 export const ChartHeader = styled.div`
   width: 100%;

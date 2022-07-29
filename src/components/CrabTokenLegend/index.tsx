@@ -1,5 +1,6 @@
 import * as S from './styled'
 import Image from 'next/Image'
+import formatter from 'utils/formatter'
 
 export type CrabTokensName =
   | 'SURGE'
@@ -10,18 +11,40 @@ export type CrabTokensName =
   | 'RUINED'
   | 'GEM'
   | 'ORGANIC'
+  | string
+
+export type Bucket = {
+  avgPrice: number
+  bucketDate: number
+  higherPrice: number
+  lowerPrice: number
+  totalPrice: number
+  totalSales: number
+}
 
 export interface TokenChartLegend {
   name: CrabTokensName
-  value: number
-  percentage: number
   color: string
-  status: 'up' | 'down'
+  buckets: Bucket[]
 }
 
 type CrabTokenLegendProps = TokenChartLegend
 
 const CrabTokenLegend = (props: CrabTokenLegendProps) => {
+  const buckets = props.buckets
+  const updatedBucket = buckets[buckets.length - 1]
+  const beforeLastBucket = buckets[buckets.length - 2]
+
+  const getPercentageDifference = () => {
+    const sub = updatedBucket?.avgPrice - beforeLastBucket?.avgPrice
+    const sum = updatedBucket?.avgPrice + beforeLastBucket?.avgPrice
+
+    const diff = (sub / (sum / 2)) * 100
+    return diff
+  }
+
+  const percentage = getPercentageDifference()
+
   return (
     <S.Wrapper color={props.color}>
       <S.IconWrapper>
@@ -31,11 +54,10 @@ const CrabTokenLegend = (props: CrabTokenLegendProps) => {
           height={26}
         />
       </S.IconWrapper>
-      <S.TokenValue>{props.value}</S.TokenValue>
-      <S.TokenPercentage status={props.status}>
-        {props.status === 'up' && '+'}
-        {props.status === 'down' && '-'}
-        {props.percentage}%
+      <S.TokenValue>{formatter.format(updatedBucket.avgPrice)}</S.TokenValue>
+      <S.TokenPercentage status={percentage > 0 ? 'up' : 'down'}>
+        {percentage > 0 && '+'}
+        {Math.round(percentage)}%
       </S.TokenPercentage>
     </S.Wrapper>
   )
