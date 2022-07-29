@@ -1,7 +1,4 @@
-import CrabTokenLegend, {
-  CrabTokensName,
-  TokenChartLegend,
-} from 'components/CrabTokenLegend'
+import CrabTokenLegend, { CrabTokensName } from 'components/CrabTokenLegend'
 import * as S from './styled'
 
 const crabClassColors: Record<CrabTokensName, string> = {

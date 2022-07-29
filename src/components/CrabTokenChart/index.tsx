@@ -55,7 +55,7 @@ const options = {
 
 const CrabTokenChart = ({ chartData }: CrabTokenChartProps) => {
   const mountSerie = (bucketName: CrabTokensName) => {
-    let values: any[] = []
+    const values: any[] = []
     chartData[bucketName]?.forEach((item: any) => {
       values.push(item.avgPrice)
     })

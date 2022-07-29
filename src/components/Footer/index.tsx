@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <S.FooterBg>
       <div>
-        <a href="https://p2eanalytics.com/" target="_blank">
+        <a href="https://p2eanalytics.com/" target="_blank" rel="noreferrer">
           <FooterAuthor />
         </a>
       </div>

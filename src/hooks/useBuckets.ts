@@ -33,7 +33,7 @@ export const allClassesName: CrabTokensName[] = [
 
 const mountRequests = (params: BucketsParams) => {
   const url = '/marketplace/game/crabada/prices'
-  let allRequests: any = []
+  const allRequests: any = []
   allClassesName.forEach((crabClass) => {
     allRequests.push(
       api.post(url, {
@@ -65,7 +65,7 @@ function useBuckets(params: BucketsParams) {
     crabClass.data.sort((a, b) => a.bucketDate - b.bucketDate)
   )
 
-  let renamedBuckets: { [x: number]: any }[] = []
+  const renamedBuckets: { [x: number]: any }[] = []
   data?.forEach((responseItem: any) => {
     renamedBuckets.push({
       [JSON.parse(responseItem.config.data).crabClass]: responseItem.data,
