@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import GlobalStyles from 'styles/global'
 import Head from 'next/head'
 import SideNavBar from 'components/SideNavBar'
-import * as S from './styled'
+import * as S from '../styles/styled'
 import CrabadaTopNavBar from 'components/CrabadaTopNavbar'
 import Footer from 'components/Footer'
 
