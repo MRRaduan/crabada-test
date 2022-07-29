@@ -1,4 +1,8 @@
-import CrabTokenLegend, { TokenChartLegend } from 'components/CrabTokenLegend'
+import CrabTokenLegend, {
+  CrabTokensName,
+  TokenChartLegend,
+} from 'components/CrabTokenLegend'
+import { allClassesName } from 'hooks/useBuckets'
 // import Chart from 'react-apexcharts'
 import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
@@ -65,21 +69,66 @@ const TokensLegends: TokenChartLegend[] = [
   },
 ]
 
-const CrabTokenChart = () => {
+interface CrabTokenChartProps {
+  chartData: any
+}
+
+const CrabTokenChart = ({ chartData }: CrabTokenChartProps) => {
+  console.log(chartData)
   const options = {
     chart: {
       id: 'basic-bar',
+      zoom: {
+        enabled: false,
+      },
     },
+    tooltip: {
+      theme: 'dark',
+    },
+    stroke: {
+      curve: 'smooth',
+      width: 3,
+    },
+    colors: [
+      '#793024',
+      '#108C8C',
+      '#C9B22E',
+      '#FC252B',
+      '#0068EC',
+      '#533FB4',
+      '#EC2C9E',
+      '#34A527',
+    ],
     xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+      type: 'all',
+      tickAmount: 20,
+      labels: {
+        style: {
+          colors: '#fff',
+        },
+      },
+    },
+    yaxis: {
+      forceNiceScale: true,
+      labels: {
+        style: {
+          colors: '#fff',
+        },
+      },
     },
   }
-  const series = [
-    {
-      name: 'series-1',
-      data: [30, 40, 45, 50, 49, 60, 70, 91],
-    },
-  ]
+  const mountSerie = (bucketName: CrabTokensName) => {
+    let values: any[] = []
+    chartData[bucketName]?.forEach((item: any) => {
+      values.push(item.avgPrice)
+    })
+    return values
+  }
+
+  const series = allClassesName.map((name) => ({
+    name,
+    data: mountSerie(name),
+  }))
 
   return (
     <S.Wrapper>
@@ -99,7 +148,7 @@ const CrabTokenChart = () => {
           </S.TimeFilter>
         </S.ChartHeader>
         <S.ChartWrapper>
-          <Chart options={options} series={series} type="line" />
+          <Chart options={options} series={series} type="line" height={350} />
         </S.ChartWrapper>
       </S.ChartSpace>
       <S.ChartLegend>
