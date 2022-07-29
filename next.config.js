@@ -16,4 +16,16 @@ module.exports = {
 
     return config
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  } ,
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/crab-prices',
+        permanent: true,
+      },
+    ]
+  },
 }
