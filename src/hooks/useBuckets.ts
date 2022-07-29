@@ -68,7 +68,10 @@ function useBuckets(params: BucketsParams) {
       })
     )
 
-  const { data, error } = useSWR('/marketplace/game/crabada/prices', fetcher)
+  const { data, error, mutate } = useSWR(
+    '/marketplace/game/crabada/prices',
+    fetcher
+  )
 
   const response = data?.map((crabClass: DataResponse | any) => {
     return crabClass.data.sort((a: any, b: any) => a.bucketDate - b.bucketDate)
@@ -86,6 +89,7 @@ function useBuckets(params: BucketsParams) {
     renamedBuckets: Object.assign({}, ...renamedBuckets),
     isLoading: !error && !data,
     isError: error,
+    mutate: mutate,
   }
 }
 

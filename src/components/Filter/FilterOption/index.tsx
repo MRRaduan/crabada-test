@@ -1,10 +1,12 @@
+import { MutableRefObject } from 'react'
 import * as S from './styled'
 
 interface IFilterOptionProps {
   title: string
+  filterRef: any
 }
 
-const FilterOption = ({ title }: IFilterOptionProps) => {
+const FilterOption = ({ title, filterRef }: IFilterOptionProps) => {
   return (
     <S.Wrapper>
       <S.Title>{title}</S.Title>
@@ -14,7 +16,14 @@ const FilterOption = ({ title }: IFilterOptionProps) => {
             <div className="line" key={line}></div>
           ))}
         </S.RangeLines>
-        <S.Range type="range" min="1" max="100" defaultValue="50" id="test" />
+        <S.Range
+          type="range"
+          min="0"
+          max="3"
+          defaultValue="2"
+          id="test"
+          ref={filterRef}
+        />
       </S.RangeWrapper>
     </S.Wrapper>
   )
