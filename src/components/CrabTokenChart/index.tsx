@@ -37,7 +37,7 @@ const options: ApexOptions = {
     '#34A527',
   ],
   xaxis: {
-    type: 'all',
+    type: 'category',
     tickAmount: 20,
     labels: {
       style: {
