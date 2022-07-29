@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import api from 'api'
 import { CrabTokensName } from 'components/CrabTokenLegend'
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 
 interface Response {
   avgPrice: number
@@ -17,7 +17,7 @@ interface BucketsParams {
   breedCount: number[] | undefined
   legend: number[] | undefined
   purity: number[] | undefined
-  crabClass: CrabTokensName[]
+  crabClass?: CrabTokensName[]
 }
 
 export const allClassesName: CrabTokensName[] = [

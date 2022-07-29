@@ -10,8 +10,23 @@ const Home: NextPage = () => {
     breedCount: [0, 3],
     legend: [0, 6],
     purity: [0, 6],
-    crabClass: ['PRIME'],
   })
+
+  if (isLoading) {
+    return (
+      <>
+        <h1>Loading..</h1>
+      </>
+    )
+  }
+
+  if (isError) {
+    return (
+      <>
+        <h1>Error</h1>
+      </>
+    )
+  }
 
   return (
     <>
